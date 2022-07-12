@@ -1,16 +1,16 @@
 import React from 'react';
 import "./Product.css"
-const Product = (props) => {
-    console.log(props);
-    var priceClass = props.price>=500 ? "green":"blue";
+const Product = ({title, price, onAddToCart}) => {
+    console.log(title,price,onAddToCart);
+    var priceClass = price>=500 ? "green":"blue";
     /* const handleOnAddToCart = () => {
-        alert("Handle add to cart clicked for " + props.title +  " for " + props.price);
+        alert("Handle add to cart clicked for " + title +  " for " + price);
     } */
     return (
         <div> 
             {/* find css short/auto-complete method for react jsx */}
-        <h2>Name: {props.title}</h2>
-        <h3 className={priceClass}>Price: {props.price} <button onClick={() => {props.onAddToCart(props.title,props.price)}}>Add to cart</button></h3>
+        <h2>Name: {title}</h2>
+        <h3 className={priceClass}>Price: {price} <button onClick={() => {onAddToCart(title,price)}}>Add to cart</button></h3>
         
         <hr />
         </div>
